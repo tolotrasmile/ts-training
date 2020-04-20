@@ -1,4 +1,4 @@
-import { deepFreeze } from './deep-freeze';
+import { deepFreeze } from '../deep-freeze';
 
 describe('deepFreeze', () => {
   test('should throw an error in object mutation', () => {

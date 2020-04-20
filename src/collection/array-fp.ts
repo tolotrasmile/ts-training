@@ -6,25 +6,22 @@ export const create = <T>(...args: T[]): T[] => [...args];
 
 /**
  * Push item to the list
- * @param array
  * @param item
  */
-export const push = <T>(array: T[], item: T): T[] => [...array, item];
+export const push = <T>(item: T) => (array: T[]): T[] => [...array, item];
 
 /**
  * Insert item at the beginning of the list
- * @param array
  * @param item
  */
-export const insert = <T>(array: T[], item: T): T[] => [item, ...array];
+export const insert = <T>(item: T) => (array: T[]): T[] => [item, ...array];
 
 /**
  * Insert item to the list at the defined index
- * @param array
  * @param index
  * @param newItem
  */
-export const insertAt = <T>(array: T[], index: number, newItem: T): T[] => {
+export const insertAt = <T>(index: number, newItem: T) => (array: T[]): T[] => {
   if (index >= array.length) {
     throw new Error(
       `The index must be less than ${array.length}, otherwise use "push" or "assign" method`
@@ -37,11 +34,10 @@ export const insertAt = <T>(array: T[], index: number, newItem: T): T[] => {
 /**
  * Update item at index with new item
  * `slice` method
- * @param array
  * @param index
  * @param newItem
  */
-export const update = <T>(array: T[], index: number, newItem: T) => [
+export const update = <T>(index: number, newItem: T) => (array: T[]) => [
   ...array.slice(0, index),
   newItem,
   ...array.slice(index + 1),
@@ -53,11 +49,10 @@ export const update = <T>(array: T[], index: number, newItem: T) => [
  * Otherwise, if the index is greater than the array length,
  * it's create item at defined index and fill the rest by `undefined`
  * `Object.assign` method
- * @param array
  * @param index
  * @param newItem
  */
-export const assign = <T>(array: T[], index: number, newItem: T) => {
+export const assign = <T>(index: number, newItem: T) => (array: T[]) => {
   return Object.assign([], array, { [index]: newItem });
 };
 
@@ -77,11 +72,12 @@ export const isIterable = (value: any): Boolean => {
 
 /**
  * Swap two elements of an array
- * @param array
  * @param index1
  * @param index2
  */
-export const swap = <T>(array: T[], index1: number, index2: number): T[] => {
+export const swap = <T>(index1: number, index2: number) => (
+  array: T[]
+): T[] => {
   const result = [...array];
   [result[index1], result[index2]] = [result[index2], result[index1]];
   return result;
@@ -89,10 +85,9 @@ export const swap = <T>(array: T[], index1: number, index2: number): T[] => {
 
 /**
  * Remove the element found at the index
- * @param array
  * @param index
  */
-export const removeAt = <T>(array: T[], index: number): T[] => [
+export const removeAt = <T>(index: number) => (array: T[]): T[] => [
   ...array.slice(0, index),
   ...array.slice(index + 1),
 ];

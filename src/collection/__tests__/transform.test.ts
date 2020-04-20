@@ -1,5 +1,5 @@
-import { filter, map } from './transform';
-import { deepFreeze } from '../object/deep-freeze';
+import { filter, map } from '../transform';
+import { deepFreeze } from '../../object/deep-freeze';
 
 describe('transform', () => {
   test('map', () => {

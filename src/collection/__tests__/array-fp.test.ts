@@ -13,9 +13,9 @@ import {
   last,
   create,
   uniq,
-} from './array';
+} from '../array-fp';
 
-import { deepFreeze } from '../object/deep-freeze';
+import { deepFreeze } from '../../object/deep-freeze';
 
 describe('array', () => {
   test('create', () => {
