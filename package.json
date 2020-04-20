@@ -1,0 +1,56 @@
+{
+  "name": "ts-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jest.config.js",
+  "scripts": {
+    "test": "tsc -p . && jest",
+    "test:live": "jest --watchAll",
+    "coverage": "jest --coverage --watchAll",
+    "serve:test": "live-server coverage/lcov-report"
+  },
+  "keywords": [],
+  "author": "Tolotra Raharison <tolotra.raharison@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "deep-freeze": "0.0.1",
+    "expect": "^25.1.0",
+    "ramda": "^0.27.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/parser": "^7.8.7",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/register": "^7.8.6",
+    "@babel/types": "^7.8.7",
+    "@types/jest": "^25.1.3",
+    "@types/node": "^13.7.7",
+    "@types/ramda": "^0.26.43",
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
+    "enzyme": "^3.11.0",
+    "jest": "^25.1.0",
+    "jsdom": "^16.2.0",
+    "jsdom-global": "^3.0.2",
+    "live-server": "^1.2.1",
+    "mocha": "^7.1.0",
+    "mock-local-storage": "^1.1.11",
+    "nyc": "^15.0.0",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "roots": [
+      "<rootDir>",
+      "src"
+    ],
+    "modulePaths": [
+      "<rootDir>",
+      "src"
+    ]
+  }
+}

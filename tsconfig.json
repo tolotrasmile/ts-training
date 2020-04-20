@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "jsx": "react",
+    "target": "es6",
+    "outDir": "lib",
+    "declaration": true,
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "module": "ES6"
+  },
+  "include": [
+    "src"
+  ]
+}
